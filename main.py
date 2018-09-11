@@ -1,4 +1,6 @@
 #!/usr/local/bin/python
+# -*- coding: utf-8 -*-
+
 import random
 
 def roller(nrange):
@@ -14,7 +16,9 @@ def main():
     timeandplace=prettygui()
     entropy=roller(100)
     dataset = dictionary(entropy)
-    print dataset[int(timeandplace)]
+    details=dataset[int(timeandplace)]
+    print details
+    detailencounter=encounterdetail("Z")
 
 def prettygui():
     #Yeah not yet...
@@ -32,4 +36,83 @@ def prettygui():
     return gui
 
 
+def encounterdetail(zone):
+    entropyten=roller(10)
+
+    print entropyten
+    if zone == "A":
+        encounter="A Lost Child "
+        if 1 <= entropyten <= 3:
+            encountermodifier="Wandering aimlessly."
+        if 4 <= entropyten <= 6:
+            encountermodifier="Asks for the PCs help."
+        if 7 <= entropyten <= 9:
+            encountermodifier="Inadvertently grabs a PC’s hand."
+        if 10 <= entropyten <= 10:
+            encountermodifier="Gets picked up by the nice man in the big black unmarked car."
+    if zone == "B":
+        encounter = (roller(4)+1), " Mall Rats"
+        if 1 <= entropyten <= 2:
+            encountermodifier = "Shopping till they drop."
+        if 3 <= entropyten <= 4:
+            encountermodifier = "Boisterously comparing the newest fashions (actually pretty ugly stuff)."
+        if 5 <= entropyten <= 6:
+            encountermodifier = "Shoplifting."
+        if 7 <= entropyten <= 8:
+            encountermodifier = "Playing mall tag."
+        if 9 <= entropyten <= 9:
+            encountermodifier = "Attempting to pickpocket CredSticks"
+        if 10 <= entropyten <= 10:
+            encountermodifier = "Attempting to pickpocket a PC’s CredStik."
+    if zone == "C":
+        encounter = " Priest "
+    if zone == "D":
+        encounter = " Rabbi"
+    if zone == "E":
+        encounter = " VideoVangelist"
+    if zone == "F":
+        encounter = (roller(4)+1), " Buddhists"
+    if zone == "G":
+        encounter = (roller(2)), " Mormons"
+    if zone == "H":
+        encounter = (roller(4)+1), " Children Playing"
+    if zone == "I":
+        encounter = " Bike Courier"
+    if zone == "J":
+        encounter = (roller(4)+1), " Corporates"
+    if zone == "K":
+        encounter = (roller(4)+1), " Corporate Security"
+    if zone == "L":
+        encounter = " Rocker"
+    if zone == "M":
+        encounter = " SimStim Star"
+    if zone == "N":
+        encounter = (roller(4)+1), " Religious Fanatics complete with Robes"
+    if zone == "O":
+        encounter = (roller(4)+1), " College Students"
+    if zone == "P":
+        encounter = " Mnemonic Courier"
+    if zone == "Q":
+        encounter = (roller(2)), " Techies"
+    if zone == "R":
+        encounter = " Medic"
+    if zone == "S":
+        encounter = " Pilot"
+    if zone == "T":
+        encounter = (roller(6)), " Military Personnel"
+    if zone == "U":
+        encounter = (roller(4)+1), " Corporate Police"
+    if zone == "V":
+        encounter = " Hacker"
+    if zone == "W":
+        encounter = " Body Guard"
+    if zone == "X":
+        encounter = " Exotic"
+    if zone == "Y":
+        encounter = (roller(4)*3), " Neutral Crowd"
+    if zone == "Z":
+        encounter = (roller(4)+2), " Riot Police"
+
+
+    print encounter
 main()
